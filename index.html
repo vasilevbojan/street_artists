@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./app/styles/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#">Landing page</a>
+        <a href="#visitorHomePage">Visitor Home Page</a>
+        <a href="#visitorListing">Visitor Listing</a>
+        <a href="#visitorFilters">Visitor Filters</a>
+        <a href="#artistHomePage">Artist Home Page</a>
+        <a href="#artistCaptureImage">Artist Capture Image</a>
+    </nav>
+
+    <header>
+        <h1>This is header and it is present through all pages</h1>
+    </header>
+
+    <section class="page" id="landingPage">
+        <h3>This is landing page</h3>
+
+        <div>
+            <h4>join as Artist</h4>
+            <select id="artists">
+
+            </select>
+        </div>
+        <div>
+            <h4 id="joinAsVisitor">join as Visitor</h4>
+        </div>
+
+    </section>
+
+    <section class="page" id="artistCaptureImage">
+        This is artist capture image
+
+        <button id="captureImage">Capture Image</button>
+        <button id="stopStream">Stop Stream</button>
+        <video autoplay id="liveStream" width="720" height="560"></video>
+        <canvas id="liveCapture"></canvas>
+
+        <img id="capturedImage" />
+    </section>
+
+    <section class="page" id="visitorHomePage">
+        This is visitor home page
+    </section>
+
+    <section class="page" id="visitorListing">
+        <h3>This is visitor listing</h3>
+        <div id="visitorListingContainer">
+
+        </div>
+    </section>
+
+    <section class="page" id="visitorFilters">
+        This is visitor filters
+    </section>
+
+    <section class="page" id="artistHomePage">
+        <h3>This is artist Home page</h3>
+        <div>Logged in artist is: <span id="artist"></span></div>
+
+        <div id="chartControls">
+            <p>Display my income for last:</p>
+            <button id="last7">Last 7</button>
+            <button id="last14">Last 14</button>
+            <button id="last30">Last 30</button>
+
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="./app/main.js"></script>
+</body>
+
+</html>

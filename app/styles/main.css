@@ -1,0 +1,12 @@
+.page {
+  display: none;
+}
+
+canvas {
+  border: 3px solid tomato;
+  display: none;
+}
+
+#capturedImage {
+  border: 3px solid orchid;
+}
