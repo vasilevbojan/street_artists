@@ -38,8 +38,8 @@ export function initCaptureImage() {
 
 export function stopStream() {
   const stream = liveStream.srcObject
-  const allTracks = stream.getTracks()
-  allTracks.forEach((track) => {
+  const allTracks = stream?.getTracks()
+  allTracks?.forEach((track) => {
     track.stop()
   })
 }

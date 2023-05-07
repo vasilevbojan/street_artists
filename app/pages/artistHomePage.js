@@ -1,147 +1,127 @@
 import { items } from "../../data/data.js";
 import { getCurrentArtist } from "../globals.js";
+import { publishedItems } from "../globals.js";
 
+let myChart = undefined;
 
 export function initArtistHomePage() {
-   // const currentArtist = getCurrentArtist()
-   const currentArtist = 'Leanne Graham'
-   document.querySelector('#artist').textContent = currentArtist
+  const currentArtist = getCurrentArtist();
 
+  document.querySelector("#artist").textContent = currentArtist;
 
+  const itemsByArtist = items.filter((item) => item.artist === currentArtist);
 
-   const itemsByArtist = items.filter(item => item.artist === currentArtist)
+  const soldItems = itemsByArtist.filter((item) => Boolean(item.dateSold));
 
-   const soldItems = itemsByArtist.filter(item => Boolean(item.dateSold))
-   console.log(`${soldItems.length}/${itemsByArtist.length}`)
+  const numberSoldItems = document.querySelector("#soldItems");
+  const totalItems = document.querySelector("#totalItems");
+  numberSoldItems.innerText = soldItems.length;
+  totalItems.innerText = itemsByArtist.length;
 
+  const sum = soldItems.reduce((acc, item) => acc + item.priceSold, 0);
 
-   // let sum = 0
+  let result = Intl.NumberFormat("de-DE").format(sum);
+  const totalIncome = document.querySelector("#totalIncome");
+  totalIncome.innerText = `$${result}`;
+  let auctionedItems = publishedItems.filter((item) => item.isAuctioning);
+  let sumAuctioned = 0;
+  auctionedItems.forEach((item) => (sumAuctioned = sumAuctioned + item.priceSold));
+  console.log(sumAuctioned);
+  const sumAuctionedItems = document.getElementById("sumAuctionedItems")
+  sumAuctionedItems.innerText = "$"+Intl.NumberFormat("de-DE").format(sumAuctioned)
+  const last7 = document.querySelector("#last7");
+  const last14 = document.querySelector("#last14");
+  const last30 = document.querySelector("#last30");
 
-   // soldItems.forEach(item => {
-   //    sum = sum + item.priceSold
-   // })
-
-   const sum = soldItems.reduce((acc, item) => acc + item.priceSold, 0)
-
-   console.log(sum)
-
-
-
-
-   const ctx = document.getElementById('myChart');
-
-   const myChart = new Chart(ctx, {
-      type: 'bar',
+  if (!myChart) {
+    const ctx = document.getElementById("myChart");
+    myChart = new Chart(ctx, {
+      type: "bar",
       data: {
-         labels: generateLabels(7),
-         datasets: [{
-            label: 'amount',
+        labels: 0,
+        datasets: [
+          {
+            label: "amount",
             data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: ['rgba(100, 0, 0, 1)',],
-            borderWidth: 1
-         }]
+            backgroundColor: ["rgb(161, 106, 94)"],
+            borderWidth: 1,
+            color: "#a16a5e",
+          },
+        ],
       },
       options: {
-         indexAxis: 'y',
-      }
-   });
+        indexAxis: "y",
+        barPercentage: 0.5,
+        responsive: true,
+        maintainAspectRatio: false,
+        hoverBackgroundColor: [`#D44C2E`],
 
-   const last7 = document.querySelector('#last7')
-   const last14 = document.querySelector('#last14')
-   const last30 = document.querySelector('#last30')
+        scales: {
+          x: {
+            grid: {
+              display: false,
+            },
+          },
+          y: {
+            grid: {
+              display: false,
+            },
+          },
+        },
+      },
+    });
+    addData(7);
+  } else {
+    addData(7);
+  }
 
-   last7.addEventListener('click', function () {
-      const labels = generateLabels(7)
+  const daysArr = [last7, last14, last30];
 
-      myChart.data.labels = labels
+  daysArr.forEach((btn) => {
+    btn.addEventListener("click", function (event) {
+      addData(event.currentTarget.value);
+    });
+    window.addEventListener("hashchange", function () {
+      btn.parentElement.classList.remove("active");
+      last7.parentElement.classList.add("active");
+    });
+  });
 
-      const newDate = labels.map(label => {
-         let sum = 0
-
-         soldItems.forEach(item => {
-            if (label === formatDate(item.dateSold)) {
-               sum = sum + item.priceSold
-            }
-         })
-
-         return sum
-      })
-
-      myChart.data.datasets[0].data = newDate
-
-      myChart.update()
-
-   })
-
-   last14.addEventListener('click', function () {
-      const labels = generateLabels(14)
-
-      myChart.data.labels = labels
-
-      const newDate = labels.map(label => {
-         let sum = 0
-
-         soldItems.forEach(item => {
-            if (label === formatDate(item.dateSold)) {
-               sum = sum + item.priceSold
-            }
-         })
-
-         return sum
-      })
-
-      myChart.data.datasets[0].data = newDate
-
-      myChart.update()
-
-   })
-
-   last30.addEventListener('click', function () {
-      const labels = generateLabels(30)
-
-      myChart.data.labels = labels
-
-      const newDate = labels.map(label => {
-         let sum = 0
-
-         soldItems.forEach(item => {
-            if (label === formatDate(item.dateSold)) {
-               sum = sum + item.priceSold
-            }
-         })
-
-         return sum
-      })
-
-      myChart.data.datasets[0].data = newDate
-
-      myChart.update()
-
-   })
+  function addData(num) {
+    const labels = generateLabels(num);
+    myChart.data.labels = labels;
+    const newDate = labels.map((label) => {
+      let sum = 0;
+      soldItems.forEach((item) => {
+        if (label === formatDate(item.dateSold)) {
+          sum = sum + item.priceSold;
+        }
+      });
+      return sum;
+    });
+    myChart.data.datasets[0].data = newDate;
+    myChart.update();
+  }
 }
-
 
 function generateLabels(daysAgo) {
+  const arr = [];
 
+  for (let i = 0; i < daysAgo; i++) {
+    const start = new Date();
 
-   const arr = []
+    const startDate = start.getDate();
 
-   for (let i = 0; i < daysAgo; i++) {
-      const start = new Date()
+    const currentDate = start.setDate(startDate - i);
 
-      const startDate = start.getDate()
+    const formattedDate = formatDate(currentDate);
 
-      const currentDate = start.setDate(startDate - i)
+    arr.push(formattedDate);
+  }
 
-      const formattedDate = formatDate(currentDate)
-
-      arr.push(formattedDate)
-
-   }
-
-   return arr
+  return arr;
 }
 
-function formatDate(date) {
-   return new Date(date).toLocaleDateString('en-gb')
+export function formatDate(date) {
+  return new Date(date).toLocaleDateString("en-gb");
 }
