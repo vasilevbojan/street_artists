@@ -487,3 +487,10 @@ canvas {
 }
 
 
+#addEditPage select {
+  color: #edd5bb;
+  background-color: transparent;
+  border: 1px solid #edd5bb;
+  border-radius: 3px;
+  font-size: 18px;
+}

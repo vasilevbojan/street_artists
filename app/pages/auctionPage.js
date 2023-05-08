@@ -149,7 +149,7 @@ export function initAuctionPage() {
         clearInterval(timer);
       }
       function clearInt() {
-        localStorage.setItem(`time${item.id}`, "0:30");
+        localStorage.setItem(`time${item.id}`, "2:00");
       }
 
       if (timer) {

@@ -1,6 +1,7 @@
 import { items } from "../../data/data.js";
 import { getCurrentArtist, updateItems } from "../globals.js";
 import { formatDate } from "../pages/artistHomePage.js";
+
 export let editmode = false;
 const addTitleInput = document.getElementById("addTitle");
 const addDescriptionInput = document.getElementById("addDescription");
@@ -26,6 +27,11 @@ export function initArtistListingPage() {
   const currentArtist = getCurrentArtist();
   document.querySelector("#artistOnListing").textContent = currentArtist;
   const artistItems = items.filter((item) => item.artist === currentArtist);
+  const captureContainer = document.getElementById("takeSnapshot")
+  captureContainer.innerHTML = ` <a class="textColor3" href="#artistCaptureImage">
+  <img src="./Images/Snapshot.svg" alt="" />
+  <p>Take a snapshot</p>
+</a>`
 
   const artistContainer = document.getElementById("artistListingContainer");
   artistContainer.innerHTML = "";
@@ -33,6 +39,7 @@ export function initArtistListingPage() {
   addNewItem.addEventListener("click", function(){
     editmode = false
     location.hash = "#addEditPage";
+
   })
   render();
   function render() {

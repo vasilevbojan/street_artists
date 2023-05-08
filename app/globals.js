@@ -6,11 +6,11 @@ export function getCurrentArtist() {
   return localStorage.getItem("selectedArtist") || currentArtist;
   }
 
-export function clearCurrentArtist() {
-  currentArtist = null
-}
+  export function clearCurrentArtist() {
+    currentArtist = null
+  }
+  
 
-  updateItems()
 export function updateItems() {
   localStorage.setItem('items', JSON.stringify(items))
 }

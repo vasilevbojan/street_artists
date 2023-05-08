@@ -152,25 +152,37 @@
         </div>
       </nav>
       <div class="mt-5"></div>
-      <div class="pt-4">
-        <video
-        autoplay
-        id="liveStream"
-        class="border-danger"
-        width="380"
-        height="380"
-        ></video>
-        <canvas
-        id="liveCapture"
-        width="425"
-        height="425"
-        class="border-danger"
-        ></canvas>
+      <div class="py-4 container ">
+        <div class="row justify-items-center">
+          <div class="col rounded-lg">
+
+            <video
+            autoplay
+            id="liveStream"
+            class=""
+            width="395"
+            height="395"
+
+            ></video>
+            <canvas
+            id="liveCapture"
+            width="425"
+            height="425"
+            class="border-danger d-none"
+            ></canvas>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="text-center">
+              <button class="btn" id="captureImage"><img src="./Images/Snapshot.svg" alt="" class="text-dark"></button>
+              
+    
+            </div>
+          </div>
+        </div>
         
-        <img id="capturedImage" />
-        <div class="text-center">
-          <button class="btn" id="captureImage"><img src="./Images/Snapshot.svg" alt="" class="text-dark"></button>
-          
+             
 
         </div>
       </div>
@@ -659,6 +671,7 @@
             <div class="row mb-4">
               <div class="col">
                 <label for="addTitle"> Title </label>
+                
                 <input type="text" id="addTitle" class="form-control" />
               </div>
             </div>
@@ -676,7 +689,8 @@
             <div class="row mb-4">
               <div class="col-6">
                 <label for="addType">Type</label>
-                <input type="text" id="addType" class="form-control" />
+                <br>
+                <select id="addType" class="form-control"></select>
               </div>
               <div class="col-6">
                 <label for="addPrice"> Price </label>
@@ -693,10 +707,7 @@
             <div
               class="takeSnapshot d-flex justify-content-center align-items-center text-center mx-auto" id="takeSnapshot"
             >
-              <a class="textColor3" href="#artistCaptureImage">
-                <img src="./Images/Snapshot.svg" alt="" />
-                <p>Take a snapshot</p>
-              </a>
+             
             </div>
             <div class="row py-3">
               <div class="col-6">

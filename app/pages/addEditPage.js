@@ -1,6 +1,8 @@
 import { getCurrentArtist, updateItems } from "../globals.js";
 import { editmode } from "../pages/artistListingPage.js";
 import { items } from "../../data/data.js";
+import { capturedPicture } from "./artistCaptureImage.js";
+
 import {
   addTitleInput,
   addDescriptionInput,
@@ -15,6 +17,13 @@ import {
 export function initAddEditItem() {
   const currentArtist = getCurrentArtist();
 
+  const typesArr = [...new Set(items.reduce((a, c) => [...a, c.type], []))];
+  addTypeInput.innerHTML = "";
+  addTypeInput.innerHTML += '<option value="" selected>Choose</option>';
+  typesArr.forEach((type) => {
+    addTypeInput.innerHTML += `<option value="${type}">${type}</option>`;
+  });
+
   const artistOnAddNew = document.getElementById("artistOnAddItem");
   artistOnAddNew.innerText = currentArtist;
 
@@ -28,7 +37,7 @@ export function initAddEditItem() {
     if (editmode) {
       (items[dataindex].id = itemid),
         (items[dataindex].description = addDescriptionInput.value),
-        (items[dataindex].image = addUrlInput.value),
+        (items[dataindex].image = capturedPicture || addUrlInput.value),
         (items[dataindex].price = addPriceInput.value),
         (items[dataindex].artist = currentArtist),
         (items[dataindex].dateCreated = new Date().toISOString()),
@@ -43,7 +52,7 @@ export function initAddEditItem() {
       items.push({
         id: items[items.length - 1].id + 1,
         description: addDescriptionInput.value,
-        image: addUrlInput.value,
+        image: capturedPicture || addUrlInput.value,
         price: addPriceInput.value,
         artist: currentArtist,
         dateCreated: new Date().toISOString(),
