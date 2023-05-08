@@ -17,7 +17,7 @@ export const items = itemsFromLS || [
     artist: "Leanne Graham",
     dateCreated: "2022-08-21T17:11:19.416Z",
     isPublished: true,
-    isAuctioning: true,
+    isAuctioning: false,
     dateSold: "2023-04-11T15:21:41.926Z",
     priceSold: 0,
   },
@@ -49,7 +49,7 @@ export const items = itemsFromLS || [
     artist: "Clementine Bauch",
     dateCreated: "2022-08-16T13:55:02.623Z",
     isPublished: true,
-    isAuctioning: true,
+    isAuctioning: false,
     dateSold: "2022-09-17T00:49:44.272Z",
     priceSold: 0,
   },
@@ -175,7 +175,7 @@ export const items = itemsFromLS || [
     artist: "Leanne Graham",
     dateCreated: "2022-08-20T15:30:30.259Z",
     isPublished: true,
-    isAuctioning: true,
+    isAuctioning: false,
     dateSold: "2023-04-25T12:14:01.482Z",
     priceSold: 0,
     title: "Peace Underneath",
@@ -967,5 +967,3 @@ export const items = itemsFromLS || [
   },
 ];
 
-console.log(itemsFromLS)
-console.log(items)

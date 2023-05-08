@@ -121,14 +121,59 @@
 
     <!-- ARTIST CAPTURE IMAGE PAGE -->
     <section class="page" id="artistCaptureImage">
-      This is artist capture image
+      <nav class="navbar fixed-top navbar-expand-lg header">
+        <a class="navbar-brand" href="#">
+          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+        /></a>
+        <span
+          id="artistOnCapture"
+          class="h2 text-center textColor navbar-text pl-5"
+        >
+        </span>
 
-      <button id="captureImage">Capture Image</button>
-      <button id="stopStream">Stop Stream</button>
-      <video autoplay id="liveStream" width="720" height="560"></video>
-      <canvas id="liveCapture"></canvas>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup1"
+          aria-controls="navbarNavAltMarkup1"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <img id="capturedImage" />
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
+          <div class="navbar-nav text-center">
+            <a class="nav-link" href="#artistHomePage">Home </a>
+            <a class="nav-link" href="#artistListingPage">Items</a>
+            <a class="nav-link" href="#auctionPage">Auction</a>
+          </div>
+        </div>
+      </nav>
+      <div class="mt-5"></div>
+      <div class="pt-4">
+        <video
+        autoplay
+        id="liveStream"
+        class="border-danger"
+        width="380"
+        height="380"
+        ></video>
+        <canvas
+        id="liveCapture"
+        width="425"
+        height="425"
+        class="border-danger"
+        ></canvas>
+        
+        <img id="capturedImage" />
+        <div class="text-center">
+          <button class="btn" id="captureImage"><img src="./Images/Snapshot.svg" alt="" class="text-dark"></button>
+          
+
+        </div>
+      </div>
     </section>
 
     <!-- VISITOR HOME PAGE -->
@@ -540,13 +585,13 @@
         </div>
       </nav>
       <div class="pt-4"></div>
-      <div class="container-fluid marginTop">
+      <div class="container-fluid marginTop justify-content-between">
         <div class="row mb-4">
           <div class="col px-0">
             <div class="colorLighter p-4 card">
               <a
                 class="py-5 text-center textColor addItemBorder"
-                href="#addEditPage"
+                id="addNewItem"
               >
                 + Add new Item
               </a>
@@ -595,7 +640,7 @@
           <form action="" class="textColor4 mb-4">
             <div class="row mb-4">
               <div class="col-6">
-                <p class="">Add new Item</p>
+                <p class="h3" id="addEditTitle"></p>
               </div>
               <div class="col-6">
                 <div class="form-check form-check-inline">
@@ -646,7 +691,7 @@
             </div>
             <p class="text-center textColor3 my-2">or</p>
             <div
-              class="takeSnapshot d-flex justify-content-center align-items-center text-center mx-auto"
+              class="takeSnapshot d-flex justify-content-center align-items-center text-center mx-auto" id="takeSnapshot"
             >
               <a class="textColor3" href="#artistCaptureImage">
                 <img src="./Images/Snapshot.svg" alt="" />
@@ -659,11 +704,14 @@
                   href="#artistListingPage"
                   class="btn btn-danger btn-block"
                   type="submit"
-                  >Add new item</a
-                >
+                  id="addEditBtn"
+                ></a>
               </div>
               <div class="col-6">
-                <a href="#artistListingPage" class="btn btn-light btn-block"
+                <a
+                  href="#artistListingPage"
+                  class="btn btn-light btn-block"
+                  id="cancelBtn"
                   >Cancel</a
                 >
               </div>
@@ -712,4 +760,3 @@
     <script type="module" src="./app/main.js"></script>
   </body>
 </html>
-

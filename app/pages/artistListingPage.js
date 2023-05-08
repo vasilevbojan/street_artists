@@ -1,7 +1,26 @@
 import { items } from "../../data/data.js";
 import { getCurrentArtist, updateItems } from "../globals.js";
 import { formatDate } from "../pages/artistHomePage.js";
-import { initAuctionPage } from "./auctionPage.js";
+export let editmode = false;
+const addTitleInput = document.getElementById("addTitle");
+const addDescriptionInput = document.getElementById("addDescription");
+const addTypeInput = document.getElementById("addType");
+const addPriceInput = document.getElementById("addPrice");
+const addUrlInput = document.getElementById("addUrl");
+const checkIsPublsihed = document.getElementById("isPublished");
+const addNewItem = document.getElementById("addNewItem")
+let dataindex
+let itemid
+export {
+  addTitleInput,
+  addDescriptionInput,
+  addTypeInput,
+  addPriceInput,
+  addUrlInput,
+  checkIsPublsihed,
+  dataindex,
+  itemid
+};
 
 export function initArtistListingPage() {
   const currentArtist = getCurrentArtist();
@@ -10,6 +29,11 @@ export function initArtistListingPage() {
 
   const artistContainer = document.getElementById("artistListingContainer");
   artistContainer.innerHTML = "";
+
+  addNewItem.addEventListener("click", function(){
+    editmode = false
+    location.hash = "#addEditPage";
+  })
   render();
   function render() {
     artistItems.forEach(
@@ -44,7 +68,7 @@ export function initArtistListingPage() {
           isPublished ? "Unpublish" : "Publish"
         }</button>
       <button type="button" id="removeBtn${id}" class=" btn btn-danger px-1">Remove</button>
-      <button type="button" id="editBtn${id}" class=" btn px-1" href="#addEditPage">Edit</button>
+      <button type="button" id="editBtn${id}" class=" btn px-1 colorLighter textColor" href="#addEditPage">Edit</button>
 
       </div>
     </div>`;
@@ -65,10 +89,9 @@ export function initArtistListingPage() {
       sendToAucBtn.addEventListener("click", function (event) {
         console.log(event);
         items[index].isAuctioning = true;
-        items[index].priceSold = 0
+        items[index].priceSold = 0;
         updateItems();
         initArtistListingPage();
-       
       });
 
       publishBtn.addEventListener("click", function (event) {
@@ -87,6 +110,22 @@ export function initArtistListingPage() {
         updateItems();
         initArtistListingPage();
       });
+
+      editBtn.addEventListener("click", function () {
+        editmode = true;
+        dataindex = index;
+
+        itemid = item.id
+        addTitleInput.value = item.title;
+        addDescriptionInput.value = item.description;
+        addTypeInput.value = item.type;
+        checkIsPublsihed.checked = item.isPublished;
+        addPriceInput.value = item.price;
+        addUrlInput.value = item.image;
+        location.hash = "#addEditPage";
+      });
     });
   }
 }
+
+

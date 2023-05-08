@@ -86,6 +86,10 @@ section {
   font-size: 50px;
 }
 
+.fontMiddle{
+font-size: 20px;
+}
+
 .fontSizeSmall {
   font-size: 12px;
 }
@@ -210,7 +214,7 @@ section {
   font-size: 40px;
 }
 
-.card p {
+#visitorListing .card p {
   font-size: 14px;
 }
 
@@ -455,6 +459,11 @@ canvas {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
+}
+
+.won p {
+  font-size: 20px;
 }
 
 #addEditPage label {
@@ -470,4 +479,11 @@ canvas {
   background-color: white;
   color: #495057;
 }
+
+
+#artistCaptureImage {
+  background-color: #a16a5e;
+  
+}
+
 

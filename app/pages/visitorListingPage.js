@@ -30,27 +30,3 @@ export function initVisitorListingPage() {
     isFilteredShown = true;
   }
 }
-// // destructuring
-
-// const obj = {
-//     name: 'Riste',
-//     age: 35,
-//     address: {
-//         st: 'Prashka',
-//         no: 11
-//     }
-// }
-
-// console.log(obj.name) // Riste
-
-// const { name, age, address } = obj
-
-// const { st, no } = address
-
-// console.log(name, age) // Riste 35
-
-// someFn(obj)
-
-// function someFn({ name, age, address }) {
-
-// }
