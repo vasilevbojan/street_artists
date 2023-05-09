@@ -63,6 +63,10 @@ section {
   color: #edd5bb;
 }
 
+.textColor5 {
+  color: #d44c2e;
+}
+
 .artistBtn {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%);
   background-color: rgba(237, 213, 187, 1);
@@ -110,7 +114,7 @@ font-size: 20px;
   background-size: contain;
 }
 
-#findNowBtn {
+#findNowBtn  {
   background-color: #a16a5e;
   color: #fcebd5;
   border-radius: 3px;
@@ -200,12 +204,12 @@ font-size: 20px;
 }
 
 .carousel-control-prev-icon {
-  background-image: url(./Images/Prev\ Icon.svg);
+  background-image: url(./Images/PrevIcon.svg);
   height: 60px;
 }
 
 .carousel-control-next-icon {
-  background-image: url(./Images/Next\ Icon.svg);
+  background-image: url(./Images/NextIcon.svg);
   height: 60px;
 }
 
@@ -314,7 +318,7 @@ font-size: 20px;
 }
 
 .navbar-toggler-icon {
-  background-image: url(./Images/navbar\ icon.svg) !important;
+  background-image: url(./Images/navbarIcon.svg) !important;
 }
 
 .navbar-toggler:focus {
@@ -459,6 +463,7 @@ canvas {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 10002;
   
 }
 
@@ -487,10 +492,16 @@ canvas {
 }
 
 
-#addEditPage select {
+#addEditPage select, #filterPage select {
   color: #edd5bb;
   background-color: transparent;
   border: 1px solid #edd5bb;
   border-radius: 3px;
   font-size: 18px;
+}
+
+#findNowBtn, .auctionBtns  {
+  background-color: #a16a5e;
+  color: #fcebd5;
+  border-radius: 3px;
 }

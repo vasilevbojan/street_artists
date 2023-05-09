@@ -13,7 +13,6 @@ export function initVisitorFilterPage() {
   typesArr.forEach((type) => {
     typeFilter.innerHTML += `<option value="${type}">${type}</option>`;
   });
-
 }
 
 const applyBtn = document.getElementById("applyFilter");

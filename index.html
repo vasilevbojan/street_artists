@@ -44,16 +44,6 @@
   </head>
 
   <body>
-    <!-- <nav>
-      <a href="#">Landing page</a>
-      <a href="#visitorHomePage">Visitor Home Page</a>
-      <a href="#visitorListing">Visitor Listing</a>
-      <a href="#visitorFilters">Visitor Filters</a>
-      <a href="#artistHomePage">Artist Home Page</a>
-      <a href="#artistListingPage">Artist Listing Page</a>
-      <a href="#artistCaptureImage">Artist Capture Image</a>
-    </nav> -->
-
     <!-- HOME PAGE -->
     <section class="page colorLighter" id="landingPage">
       <nav class="navbar fixed-top header justify-content-center">
@@ -110,9 +100,7 @@
               class="visitorBtn mx-auto d-flex align-items-end justify-content-center pb-5"
               id="joinAsVisitor"
             >
-              <h4 class="fontSizeBig textColor2" id="joinAsVisitor">
-                Join as Visitor
-              </h4>
+              <h4 class="fontSizeBig textColor2">Join as Visitor</h4>
             </div>
           </div>
         </div>
@@ -123,7 +111,7 @@
     <section class="page" id="artistCaptureImage">
       <nav class="navbar fixed-top navbar-expand-lg header">
         <a class="navbar-brand" href="#">
-          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+          <img class="logo1" src="./Images/logoSmall.png" alt="Image of logo"
         /></a>
         <span
           id="artistOnCapture"
@@ -135,15 +123,15 @@
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarNavAltMarkup1"
-          aria-controls="navbarNavAltMarkup1"
+          data-target="#navbarCaptureImage"
+          aria-controls="navbarCaptureImage"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
+        <div class="collapse navbar-collapse" id="navbarCaptureImage">
           <div class="navbar-nav text-center">
             <a class="nav-link" href="#artistHomePage">Home </a>
             <a class="nav-link" href="#artistListingPage">Items</a>
@@ -152,38 +140,36 @@
         </div>
       </nav>
       <div class="mt-5"></div>
-      <div class="py-4 container ">
+      <div class="py-4 container">
         <div class="row justify-items-center">
           <div class="col rounded-lg">
-
             <video
-            autoplay
-            id="liveStream"
-            class=""
-            width="395"
-            height="395"
-
+              autoplay
+              id="liveStream"
+              class=""
+              width="395"
+              height="395"
             ></video>
             <canvas
-            id="liveCapture"
-            width="425"
-            height="425"
-            class="border-danger d-none"
+              id="liveCapture"
+              width="425"
+              height="425"
+              class="border-danger d-none"
             ></canvas>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <div class="text-center">
-              <button class="btn" id="captureImage"><img src="./Images/Snapshot.svg" alt="" class="text-dark"></button>
-              
-    
+              <button class="btn" id="captureImage">
+                <img
+                  src="./Images/Snapshot.svg"
+                  alt="Snapshot image"
+                  class="text-dark"
+                />
+              </button>
             </div>
           </div>
-        </div>
-        
-             
-
         </div>
       </div>
     </section>
@@ -192,14 +178,17 @@
     <section class="page colorLight" id="visitorHomePage">
       <nav class="navbar fixed-top header">
         <a class="navbar-brand" href="#">
-          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+          <img class="logo1" src="./Images/logoSmall.png" alt="Image of logo"
         /></a>
         <span class="h2 text-center textColor navbar-text">
           Street ARTists
         </span>
 
         <a href="#auctionPage"
-          ><img src="./Images/Auction icon.svg" class="auctionIcon"
+          ><img
+            src="./Images/AuctionIcon.svg"
+            class="auctionIcon"
+            alt="Auction icon"
         /></a>
       </nav>
 
@@ -237,7 +226,10 @@
                   <div class="col-6 px-5 borderRight">
                     <div class="colorDark">
                       <div class="text-center">
-                        <img src="./Images/face picture.png" alt="" />
+                        <img
+                          src="./Images/facepicture.png"
+                          alt="Image of face"
+                        />
                       </div>
                       <p class="p-3 fontSizeSmall textColor3">
                         Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -262,7 +254,10 @@
                   <div class="col-6 px-5 borderRight">
                     <div class="colorDark">
                       <div class="text-center">
-                        <img src="./Images/face picture.png" alt="" />
+                        <img
+                          src="./Images/facepicture.png"
+                          alt="Image of face"
+                        />
                       </div>
                       <p class="p-3 fontSizeSmall textColor3">
                         Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -287,7 +282,10 @@
                   <div class="col-6 px-5 borderRight">
                     <div class="colorDark">
                       <div class="text-center">
-                        <img src="./Images/face picture.png" alt="" />
+                        <img
+                          src="./Images/facepicture.png"
+                          alt="Image of face"
+                        />
                       </div>
                       <p class="p-3 fontSizeSmall textColor3">
                         Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -331,14 +329,17 @@
     <section class="page" id="visitorListing">
       <nav class="navbar fixed-top header">
         <a class="navbar-brand" href="#">
-          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+          <img class="logo1" src="./Images/logoSmall.png" alt="Image of logo"
         /></a>
         <span class="h2 text-center textColor navbar-text">
           Street ARTists
         </span>
 
         <a href="#auctionPage"
-          ><img src="./Images/Auction icon.svg" class="auctionIcon"
+          ><img
+            src="./Images/AuctionIcon.svg"
+            class="auctionIcon"
+            alt="Auction icon"
         /></a>
       </nav>
       <div class="marginTop"></div>
@@ -346,8 +347,8 @@
 
       <a href="#visitorFilters"
         ><img
-          src="./Images/Filter Icon.svg"
-          alt=""
+          src="./Images/FilterIcon.svg"
+          alt="Filter icon"
           class="position-fixed"
           id="filterIcon"
       /></a>
@@ -357,14 +358,17 @@
     <section class="page" id="visitorFilters">
       <nav class="navbar fixed-top header">
         <a class="navbar-brand" href="#">
-          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+          <img class="logo1" src="./Images/logoSmall.png" alt="Image of logo"
         /></a>
         <span class="h2 text-center textColor navbar-text">
           Street ARTists
         </span>
 
         <a href="#auctionPage">
-          <img src="./Images/Auction icon.svg" class="auctionIcon"
+          <img
+            src="./Images/AuctionIcon.svg"
+            class="auctionIcon"
+            alt="Auction Icon"
         /></a>
       </nav>
       <div class="marginTop"></div>
@@ -373,20 +377,20 @@
         <div class="container">
           <a href="#visitorListing"
             ><img
-              src="./Images/Close Icon.svg"
-              alt=""
+              src="./Images/CloseIcon.svg"
+              alt="Close Icon"
               id="closeIcon"
               class="position-absolute"
             />
           </a>
           <a href="#visitorListing"
             ><img
-              src="./Images/applyFilter icon.svg"
-              alt=""
+              src="./Images/applyFilterIcon.svg"
+              alt="Apply icon"
               id="applyFilter"
               class="position-absolute"
           /></a>
-          <form action="" class="textColor4">
+          <form class="textColor4">
             <div class="row">
               <div class="col-6">
                 <p class="fontSizeBig">Filter by</p>
@@ -409,8 +413,7 @@
                 <label class="form-label" for="artistFilter">By Artist</label>
                 <select
                   id="artistFilter"
-                  class="form-select"
-                  class="btn btn-secondary dropdown-toggle"
+                  class="btn btn-secondary dropdown-toggle form-control"
                 ></select>
               </div>
             </div>
@@ -466,8 +469,7 @@
                 <label class="form-label" for="typeFilter">By Type</label>
                 <select
                   id="typeFilter"
-                  class="form-select"
-                  class="btn btn-secondary dropdown-toggle"
+                  class="btn btn-secondary dropdown-toggle form-control"
                 ></select>
               </div>
             </div>
@@ -480,24 +482,24 @@
     <section class="page" id="artistHomePage">
       <nav class="navbar fixed-top navbar-expand-lg header">
         <a class="navbar-brand" href="#">
-          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+          <img class="logo1" src="./Images/logoSmall.png" alt="Image of logo"
         /></a>
-        <span id="artist" class="h2 text-center textColor navbar-text pl-5">
+        <span id="artistHome" class="h2 text-center textColor navbar-text pl-5">
         </span>
 
         <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
+          data-target="#navbarArtistHomePage"
+          aria-controls="navbarArtistHomePage"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarArtistHomePage">
           <div class="navbar-nav text-center">
             <a class="nav-link" href="#artistHomePage">Home </a>
             <a class="nav-link" href="#artistListingPage">Items</a>
@@ -528,7 +530,7 @@
             <div class="colorOrange px-2 py-3 rounded">
               <p class="h2">Live Auctioning Item</p>
               <p class="fontSizeBig" id="sumAuctionedItems"></p>
-              <p class="h2">current bid</p>
+              <p class="h2">Current bid</p>
             </div>
           </div>
         </div>
@@ -568,7 +570,7 @@
     <section class="page" id="artistListingPage">
       <nav class="navbar fixed-top navbar-expand-lg header">
         <a class="navbar-brand" href="#">
-          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+          <img class="logo1" src="./Images/logoSmall.png" alt="Image of logo"
         /></a>
         <span
           id="artistOnListing"
@@ -580,15 +582,15 @@
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
+          data-target="#navbarArtistListingPage"
+          aria-controls="navbarArtistListingPage"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarArtistListingPage">
           <div class="navbar-nav text-center">
             <a class="nav-link" href="#artistHomePage">Home </a>
             <a class="nav-link" href="#artistListingPage">Items</a>
@@ -617,7 +619,7 @@
     <section id="addEditPage" class="page colorDarker">
       <nav class="navbar fixed-top navbar-expand-lg header">
         <a class="navbar-brand" href="#">
-          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+          <img class="logo1" src="./Images/logoSmall.png" alt="Image of logo"
         /></a>
         <span
           id="artistOnAddItem"
@@ -649,7 +651,7 @@
 
       <div class="pt-4 position-relative">
         <div class="container">
-          <form action="" class="textColor4 mb-4">
+          <form class="textColor4 mb-4 " id="form" >
             <div class="row mb-4">
               <div class="col-6">
                 <p class="h3" id="addEditTitle"></p>
@@ -663,7 +665,7 @@
                     class="form-check-input ml-2"
                     type="checkbox"
                     value=""
-                    id="isPublished"
+                    id="isPublished" 
                   />
                 </div>
               </div>
@@ -671,15 +673,14 @@
             <div class="row mb-4">
               <div class="col">
                 <label for="addTitle"> Title </label>
-                
-                <input type="text" id="addTitle" class="form-control" />
+
+                <input type="text" id="addTitle" class="form-control" required/>
               </div>
             </div>
             <div class="row mb-4">
               <div class="col">
                 <label for="addDescription"> Description </label>
-                <textarea
-                  type="text"
+                <textarea required
                   id="addDescription"
                   class="form-control"
                   rows="3"
@@ -689,42 +690,35 @@
             <div class="row mb-4">
               <div class="col-6">
                 <label for="addType">Type</label>
-                <br>
-                <select id="addType" class="form-control"></select>
+                <br />
+                <select required id="addType" class="form-control"></select>
               </div>
               <div class="col-6">
                 <label for="addPrice"> Price </label>
-                <input type="number" id="addPrice" class="form-control" />
+                <input type="number" id="addPrice" class="form-control" required />
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <label for="addUrl"> Image URL </label>
-                <input type="text" id="addUrl" class="form-control" />
+                <input type="text" id="addUrl" class="form-control" required/>
               </div>
             </div>
             <p class="text-center textColor3 my-2">or</p>
             <div
-              class="takeSnapshot d-flex justify-content-center align-items-center text-center mx-auto" id="takeSnapshot"
-            >
-             
-            </div>
+              class="takeSnapshot d-flex justify-content-center align-items-center text-center mx-auto"
+              id="takeSnapshot"
+            ></div>
             <div class="row py-3">
               <div class="col-6">
-                <a
-                  href="#artistListingPage"
+                <button
                   class="btn btn-danger btn-block"
                   type="submit"
                   id="addEditBtn"
-                ></a>
+                ></button>
               </div>
               <div class="col-6">
-                <a
-                  href="#artistListingPage"
-                  class="btn btn-light btn-block"
-                  id="cancelBtn"
-                  >Cancel</a
-                >
+                <a class="btn btn-light btn-block" id="cancelBtn">Cancel</a>
               </div>
             </div>
           </form>
@@ -736,7 +730,7 @@
     <section class="page" id="auctionPage">
       <nav class="navbar fixed-top navbar-expand-lg header">
         <a class="navbar-brand" href="#">
-          <img class="logo1" src="./Images/logo small.png" alt="Image of logo"
+          <img class="logo1" src="./Images/logoSmall.png" alt="Image of logo"
         /></a>
         <span
           id="auctionArtist"
@@ -748,15 +742,15 @@
           class="navbar-toggler hide"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
+          data-target="#navbarAuction"
+          aria-controls="navbarAuction"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon" id="navIcon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarAuction">
           <div class="navbar-nav text-center">
             <a class="nav-link" href="#artistHomePage">Home </a>
             <a class="nav-link" href="#artistListingPage">Items</a>

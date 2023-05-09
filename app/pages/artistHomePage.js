@@ -7,18 +7,18 @@ let myChart = undefined;
 export function initArtistHomePage() {
   const currentArtist = getCurrentArtist();
 
-  document.querySelector("#artist").textContent = currentArtist;
+  document.querySelector("#artistHome").textContent = currentArtist;
 
   const itemsByArtist = items.filter((item) => item.artist === currentArtist);
 
   const soldItems = itemsByArtist.filter((item) => Boolean(item.dateSold));
 
-  const numberSoldItems = document.querySelector("#soldItems");
+  const numberSoldItems = document.getElementById("soldItems");
   const totalItems = document.querySelector("#totalItems");
-  numberSoldItems.innerText = soldItems.length;
+  numberSoldItems.textContent = soldItems.length;
   totalItems.innerText = itemsByArtist.length;
 
-  const sum = soldItems.reduce((acc, item) => acc + item.priceSold, 0);
+  const sum = soldItems.reduce((acc, item) => acc + +item.priceSold, 0);
 
   let result = Intl.NumberFormat("de-DE").format(sum);
   const totalIncome = document.querySelector("#totalIncome");
@@ -26,7 +26,6 @@ export function initArtistHomePage() {
   let auctionedItems = publishedItems.filter((item) => item.isAuctioning);
   let sumAuctioned = 0;
   auctionedItems.forEach((item) => (sumAuctioned = sumAuctioned + item.priceSold));
-  console.log(sumAuctioned);
   const sumAuctionedItems = document.getElementById("sumAuctionedItems")
   sumAuctionedItems.innerText = "$"+Intl.NumberFormat("de-DE").format(sumAuctioned)
   const last7 = document.querySelector("#last7");

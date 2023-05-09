@@ -1,5 +1,4 @@
 import { getCurrentArtist, updateItems } from "../globals.js";
-import { editmode } from "../pages/artistListingPage.js";
 import { items } from "../../data/data.js";
 import { capturedPicture } from "./artistCaptureImage.js";
 
@@ -12,28 +11,30 @@ import {
   checkIsPublsihed,
   dataindex,
   itemid,
+  editmode,
 } from "../pages/artistListingPage.js";
 
 export function initAddEditItem() {
   const currentArtist = getCurrentArtist();
-
-  const typesArr = [...new Set(items.reduce((a, c) => [...a, c.type], []))];
-  addTypeInput.innerHTML = "";
-  addTypeInput.innerHTML += '<option value="" selected>Choose</option>';
-  typesArr.forEach((type) => {
-    addTypeInput.innerHTML += `<option value="${type}">${type}</option>`;
-  });
 
   const artistOnAddNew = document.getElementById("artistOnAddItem");
   artistOnAddNew.innerText = currentArtist;
 
   const addEditBtn = document.getElementById("addEditBtn");
   const addEditTitle = document.getElementById("addEditTitle");
+  const cancelBtn = document.getElementById("cancelBtn");
+  const form = document.getElementById("form");
 
+  cancelBtn.addEventListener("click", function () {
+    location.hash = "#artistListingPage";
+    form.reset()
+  });
   addEditTitle.innerText = editmode ? "Edit item" : "Add new Item";
   addEditBtn.innerText = editmode ? "Apply" : "Add new item";
 
-  addEditBtn.addEventListener("click", function (event) {
+  form.addEventListener("submit", function (event) {
+    console.log("cacko");
+    event.preventDefault();
     if (editmode) {
       (items[dataindex].id = itemid),
         (items[dataindex].description = addDescriptionInput.value),
@@ -65,5 +66,17 @@ export function initAddEditItem() {
       });
       updateItems();
     }
+    (addTitleInput.value = null),
+      (addDescriptionInput.value = null),
+      (addTypeInput.value = null),
+      (addPriceInput.value = null),
+      (addUrlInput.value = null),
+      (checkIsPublsihed.checked = false),
+      (location.hash = "#artistListingPage");
+      form.reset()
   });
+}
+
+function resetForm() {
+
 }
