@@ -60,12 +60,12 @@ export function initArtistListingPage() {
         isAuctioning,
       }) => {
         artistContainer.innerHTML += `<div class="card mb-4 w-100">
-      <img src="${image}" class="card-img-top" alt="..." />
+      <img src="${image}" class="card-img-top img-fluid" alt="..." width="425" height="200"/>
       <div class="card-body colorLighter py-1 px-3">
         <div class="d-flex justify-content-between align-items-center mb-2">
         <div><p class="card-title  font-weight-bold">${title}</p>
           <p class="date">${formatDate(dateCreated)}</p></div>
-          <span href="#" class="badge bg-primary">$${price}</span>
+          <span class="badge bg-primary">$${price}</span>
         </div>
         <p class="card-text">${description}</p>
       </div>
@@ -80,7 +80,7 @@ export function initArtistListingPage() {
           isPublished ? "Unpublish" : "Publish"
         }</button>
       <button type="button" id="removeBtn${id}" class=" btn btn-danger px-1">Remove</button>
-      <button type="button" id="editBtn${id}" class=" btn px-1 colorLighter textColor" href="#addEditPage">Edit</button>
+      <button type="button" id="editBtn${id}" class=" btn px-1 colorLighter textColor" >Edit</button>
 
       </div>
     </div>`;

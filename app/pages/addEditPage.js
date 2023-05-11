@@ -16,6 +16,7 @@ import {
 
 export function initAddEditItem() {
   const currentArtist = getCurrentArtist();
+  addUrlInput.disable = false
 
   const artistOnAddNew = document.getElementById("artistOnAddItem");
   artistOnAddNew.innerText = currentArtist;

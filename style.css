@@ -505,3 +505,8 @@ canvas {
   color: #fcebd5;
   border-radius: 3px;
 }
+
+.card-img-top {
+  width: 423px;
+  height: 200px;
+}

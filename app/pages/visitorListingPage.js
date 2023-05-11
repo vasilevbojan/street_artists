@@ -14,7 +14,7 @@ export function initVisitorListingPage() {
           <div class="card-body py-1 px-3">
           <div class="d-flex justify-content-between align-items-center mb-2">
           <h2 class="card-text ">${artist}</h2>
-          <span href="#" class="badge bg-primary ">$${price}</span>
+          <span class="badge bg-primary ">$${price}</span>
           </div>
             <h6 class="card-title">${title}</h6>
             <p class="card-text">${description}</p>

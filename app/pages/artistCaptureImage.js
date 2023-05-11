@@ -1,5 +1,6 @@
 const liveStream = document.querySelector('#liveStream')
 import { getCurrentArtist } from "../globals.js";
+import { addUrlInput} from "../pages/artistListingPage.js";
 export let capturedPicture
 
 export function initCaptureImage() {
@@ -9,10 +10,8 @@ export function initCaptureImage() {
 
   const liveCaptureCanvas = document.querySelector('#liveCapture')
   const captureImageBtn = document.querySelector('#captureImage')
-  const stopStreamBtn = document.querySelector('#stopStream')
 
   const capturedImageImg = document.querySelector('#takeSnapshot')
-  console.log('Live stream started')
 
 
 
@@ -38,6 +37,7 @@ export function initCaptureImage() {
     const imageDataUrl = liveCaptureCanvas.toDataURL('image/png')
     capturedPicture = imageDataUrl
     capturedImageImg.innerHTML = `<img src = "${imageDataUrl}" >`
+    addUrlInput.disabled = true
     location.hash = "#addEditPage"
 stopStream()
   })

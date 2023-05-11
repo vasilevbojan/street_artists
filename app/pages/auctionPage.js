@@ -45,15 +45,16 @@ export function initAuctionPage() {
     <hr>
     <p>Highest bid:</p>
     <p id="highestBid" class="fontMiddle">${item.price}</p>
-  <label for="biddingInput" class="mt-2 mb-0">Your bid:</label>
-  <br>
-    <input id="biddingInput" min=${
-      item.price
-    } type="number" step="10" class=" my-2 text-center textColor5 border-0" value=${
-        item.price
-      } ${getCurrentArtist() ? "disabled" : ""}/>
     
     <div class=" my-3 ${getCurrentArtist() ? "d-none" : ""}">
+    <label for="biddingInput" class="mt-2 mb-0">Your bid:</label>
+    <br>
+      <input id="biddingInput" min=${
+        item.price
+      } type="number" step="10" class=" my-2 text-center textColor5 border-0" value=${
+          item.price
+        } ${getCurrentArtist() ? "disabled" : ""}/>
+        <br>
     <button class="auctionBtns btn" id="minBtn" disabled >-</button>
     <button class="auctionBtns btn" id="plusBtn"  ${
       getCurrentArtist() ? "disabled" : ""
